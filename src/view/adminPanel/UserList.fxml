@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="671.0" prefWidth="1222.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.adminPanel.UserListController">
+  <children>
+      <VBox prefHeight="400.0" prefWidth="640.0">
+         <children>
+       
+            <AnchorPane id="AnchorPane" fx:id="left_main" prefHeight="638.0" prefWidth="1183.0">
+      <children>
+        <VBox layoutX="337.0" layoutY="89.0" prefHeight="157.0" prefWidth="62.0" spacing="25.0">
+            <children>
+                <Label opacity="0.0" styleClass="labelform" text="ID" />
+                <Label layoutX="10.0" layoutY="10.0" styleClass="labelform" text="CIN" />
+                <Label layoutX="10.0" layoutY="27.0" styleClass="labelform" text="NOM" />
+                        <Label styleClass="labelform" text="PRENOM" />
+                        <Label styleClass="labelform" text="TEL" />
+                        <Label styleClass="labelform" text="EMAIL" />
+                        <Label styleClass="labelform" text="Password" />
+                        <Label styleClass="labelform" text="DateNais" />
+                        <Label styleClass="labelform" text="Image" />
+                
+                        </children>
+            
+                        
+            
+                          
+               
+                    </VBox>
+            
+                                                          
+            <Button fx:id="bsave" layoutX="335.0" layoutY="648.0" mnemonicParsing="false" onAction="#saveEvent" prefHeight="33.0" prefWidth="71.0" style="-fx-background-color: lightblue;" styleClass="btn" text="Save">
+            
+                                                          
+                 
+                                                                      
+            <font>
+                <Font name="Times New Roman Bold" size="12.0" />
+            </font>
+            </Button>
+            <Button fx:id="bupdate" layoutX="431.0" layoutY="648.0" mnemonicParsing="false" onAction="#updateEvent" prefHeight="33.0" prefWidth="71.0" style="-fx-background-color: #6DF0AB;" text="Edit">
+            
+                                                               <font>
+                <Font name="Times New Roman Bold" size="12.0" />
+            </font>
+            </Button>
+            <Button fx:id="bdelete" layoutX="521.0" layoutY="649.0" mnemonicParsing="false" onAction="#deleteEvent" prefHeight="33.0" prefWidth="71.0" style="-fx-background-color: #FF4D4D;" styleClass="btn" text="Delete">
+            
+                                                                                       <font>
+                <Font name="Times New Roman" size="12.0" />
+            </font>
+            </Button>
+            
+                                                                                <Button layoutX="611.0" layoutY="649.0" mnemonicParsing="false" onAction="#clearEvent" prefHeight="33.0" prefWidth="71.0" style="-fx-background-color: lightgray;" styleClass="btn" text="Reset">
+            <font>
+                <Font name="Times New Roman Bold" size="12.0" />
+            </font>
+            
+                                                                          </Button>
+            
+            
+                        
+           <TableView fx:id="table" layoutX="647.0" layoutY="125.0" onMouseClicked="#tablehandleButtonAction" prefHeight="315.0" prefWidth="751.0">
+            <columns>
+                <TableColumn fx:id="uidu" prefWidth="59.0" text="ID" />
+                <TableColumn fx:id="ucin" prefWidth="129.00003051757812" text="CIN" />
+                <TableColumn fx:id="unom" prefWidth="49.66668701171875" text="NOM" />
+                <TableColumn fx:id="uprenom" prefWidth="60.999969482421875" text="Prenom" />
+                        <TableColumn fx:id="utel" prefWidth="68.0" text="Tel" />
+                        <TableColumn fx:id="uemail" prefWidth="84.33331298828125" text="Email" />
+                        <TableColumn fx:id="udateNaissance" prefWidth="102.6666259765625" text="DateNaissance" />
+                        <TableColumn fx:id="uimage" prefWidth="85.3333740234375" text="Image" />
+            </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+        </TableView>
+        <VBox layoutX="426.0" layoutY="79.0" prefHeight="346.0" prefWidth="199.0" spacing="15.0">
+            <children>
+                            <TextField fx:id="idu" editable="false" opacity="0.0" prefHeight="20.0" prefWidth="80.0" />
+                            <TextField fx:id="cin" layoutX="10.0" layoutY="10.0" />
+                            <TextField fx:id="nom" layoutX="10.0" layoutY="20.0" />
+                            <TextField fx:id="prenom" styleClass="field" />
+                            <TextField fx:id="tel" prefHeight="26.0" prefWidth="0.0" styleClass="field" />
+                            <TextField fx:id="email" prefHeight="0.0" prefWidth="56.0" styleClass="field" />
+                        <PasswordField fx:id="password" styleClass="field" />
+                        <DatePicker fx:id="dateNaissance" prefHeight="28.0" prefWidth="202.0" promptText="dateNaissance" />
+            </children>
+        </VBox>
+          
+                              <ImageView fx:id="image_view" fitHeight="145.0" fitWidth="172.0" layoutX="435.0" layoutY="449.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="insert_image" layoutX="467.0" layoutY="603.0" mnemonicParsing="false" onAction="#insertImage" prefHeight="33.0" prefWidth="71.0" styleClass="btn" text="Upload">
+                     <font>
+                        <Font name="Times New Roman Bold" size="12.0" />
+                     </font>
+                  </Button>
+        
+                  <Label fx:id="file_path" alignment="CENTER" layoutX="426.0" layoutY="583.0" prefHeight="23.0" prefWidth="199.0" />
+          <Label layoutX="714.0" layoutY="21.0" prefHeight="10.0" prefWidth="337.0" text="LISTE USERS" textFill="#ffc300">
+              <font>
+                  <Font name="Arial Bold" size="25.0" />
+              </font>
+          
+                                        </Label>
+                  <Label layoutY="-1.0" prefHeight="721.0" prefWidth="269.0" style="-fx-background-color: #F3F14F;" textFill="#ffc300">
+                     <font>
+                        <Font name="Arial Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Button layoutY="109.0" mnemonicParsing="false" onAction="#toUser" opacity="0.82" prefHeight="32.0" prefWidth="269.0" style="-fx-border-color: #F4D03F; -fx-background-color: #FCF3CF;" text="Gestion des utlisateurs" />
+                  <Button layoutY="141.0" mnemonicParsing="false" opacity="0.82" prefHeight="32.0" prefWidth="269.0" style="-fx-border-color: #F4D03F; -fx-background-color: #FCF3CF;" text="Gestion des articles" />
+                  <Button layoutY="173.0" mnemonicParsing="false" opacity="0.82" prefHeight="32.0" prefWidth="269.0" style="-fx-border-color: #F4D03F; -fx-background-color: #FCF3CF;" text="Gestion des categorie" />
+                  <Button layoutY="205.0" mnemonicParsing="false" opacity="0.82" prefHeight="32.0" prefWidth="269.0" style="-fx-border-color: #F4D03F; -fx-background-color: #FCF3CF;" text="Gestion des jeux" />
+                  <Button layoutY="236.0" mnemonicParsing="false" opacity="0.82" prefHeight="32.0" prefWidth="269.0" style="-fx-border-color: #F4D03F; -fx-background-color: #FCF3CF;" text="Gestion des participants" />
+                  <Button layoutY="570.0" mnemonicParsing="false" onAction="#settings" opacity="0.82" prefHeight="32.0" prefWidth="269.0" style="-fx-border-color: #F4D03F; -fx-background-color: #FCF3CF;" text="Paramétre compte" />
+                  <Button layoutY="603.0" mnemonicParsing="false" onAction="#logout" opacity="0.82" prefHeight="32.0" prefWidth="269.0" style="-fx-border-color: #F4D03F; -fx-background-color: #FCF3CF;" text="Déconnexion" />
+                  <ImageView fitHeight="103.0" fitWidth="141.0" layoutX="-19.0" layoutY="-14.0">
+                     <image>
+                        <Image url="@../img/logo_meta.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutY="79.0" mnemonicParsing="false" onAction="#home" opacity="0.82" prefHeight="32.0" prefWidth="269.0" style="-fx-border-color: #F4D03F; -fx-background-color: #FCF3CF;" text="Acceuil" />
+                  <Label layoutX="362.0" layoutY="61.0" prefHeight="43.0" prefWidth="106.0" />
+               
+      </children>
+      </AnchorPane>
+         </children>
+      </VBox>
+  </children>
+</VBox>
