@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="509.0" prefWidth="858.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml" fx:controller="com.ebadel.gui.AcceuilController">
+   <left>
+      <VBox prefHeight="400.0" prefWidth="148.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="acceuil" mnemonicParsing="false" prefHeight="44.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #FFFF00; -fx-border-width: 0px 0px 2px 0px;" text="Accueil" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="addarticle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #FFFF00; -fx-border-width: 0px 0px 2px 0px;" text="Ajouter un article" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="participer" layoutX="10.0" layoutY="54.0" mnemonicParsing="false" onAction="#participer" prefHeight="44.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #FFFF00; -fx-border-width: 0px 0px 2px 0px;" text="Participer Jeux" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="98.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: #FFFF00; -fx-border-width: 0px 0px 2px 0px;" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

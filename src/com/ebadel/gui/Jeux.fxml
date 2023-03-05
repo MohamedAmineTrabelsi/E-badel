@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ebadel.gui.JeuxController">
+    <children>
+      <Button fx:id="deleteM" layoutX="428.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#deleteMateriel" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: #000000;" text="Supprimer " textFill="#eaea14" />
+      <Button fx:id="updateMateriel" layoutX="240.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#updateMateriel" prefHeight="27.0" prefWidth="119.0" style="-fx-background-color: #000000;" text="Modifier " textFill="#eaea14" />
+      <Button fx:id="addM" layoutX="57.0" layoutY="503.0" mnemonicParsing="false" onMouseClicked="#addMateriel" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: #000000;" text="Ajouter " textFill="#eaea14" />
+      <TextField fx:id="titre_j" layoutX="833.0" layoutY="164.0" prefHeight="25.0" prefWidth="104.0" promptText="titre_j" style="-fx-border-color: #FFFF00;" />
+      <TextField fx:id="nb_per" layoutX="832.0" layoutY="285.0" prefHeight="25.0" prefWidth="105.0" promptText="nb_per" style="-fx-border-color: #FFFF00;" />
+      <TextField fx:id="date_deb_j" layoutX="834.0" layoutY="359.0" prefHeight="25.0" prefWidth="103.0" promptText="date_deb_j" style="-fx-border-color: #FFFF00;" />
+      <TextField fx:id="type_j" layoutX="832.0" layoutY="224.0" prefHeight="25.0" prefWidth="105.0" promptText="type_j" style="-fx-border-color: #FFFF00;" />
+      <ListView fx:id="ListViewJeux" layoutX="14.0" layoutY="76.0" prefHeight="415.0" prefWidth="811.0" style="-fx-border-color: #000000;" />
+      <Label layoutX="39.0" layoutY="14.0" prefHeight="48.0" prefWidth="353.0" text="Gestion des Jeux" textFill="#949e26">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <TextField fx:id="date_fin_j" layoutX="833.0" layoutY="429.0" prefHeight="25.0" prefWidth="103.0" promptText="date_fin_j" style="-fx-border-color: #FFFF00;" />
+      <ImageView fitHeight="127.0" fitWidth="185.0" layoutX="821.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../327219549_494825626194570_4624249813250472593_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="55.0" layoutX="22.0" layoutY="499.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../plus-2-math.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="35.0" layoutX="203.0" layoutY="503.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../kisspng-computer-icons-editing-portable-network-graphics-i-edit-profile-svg-png-icon-free-download-194863-5ba3457963b929.9651381015374268094085.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="46.0" layoutX="393.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../1345823.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnv" layoutX="27.0" layoutY="586.0" mnemonicParsing="false" onAction="#video" style="-fx-background-color: #000000;" text="Tirage au sort VIDEO" textFill="#fffb00" />
+      <Button fx:id="triJeux" layoutX="282.0" layoutY="548.0" mnemonicParsing="false" text="Trie" />
+      <Text layoutX="833.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titre de Jeux : " />
+      <Text layoutX="831.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type De Jeux :" />
+      <Text layoutX="832.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de personne : " />
+      <Text layoutX="832.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date debut de jeux :" />
+      <Text layoutX="834.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date fin dde Jeux :" />
+      <TextField fx:id="txtURL" layoutX="657.0" layoutY="547.0" prefHeight="26.0" prefWidth="114.0" promptText="image" />
+      <TextField fx:id="prix" layoutX="836.0" layoutY="503.0" prefHeight="27.0" prefWidth="107.0" promptText="Prix Produit" style="-fx-border-color: #FFFF00;" />
+      <Text layoutX="657.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image produit :" />
+      <Text layoutX="837.0" layoutY="487.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix produit :" />
+      <Button layoutX="581.0" layoutY="548.0" mnemonicParsing="false" onAction="#importer" style="-fx-background-color: #000000;" text="Importer" textFill="#eeff00" />
+      <Text layoutX="27.0" layoutY="578.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Video explicative Jeu :" />
+   </children>
+    
+</AnchorPane>
