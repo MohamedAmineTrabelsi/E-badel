@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="1166.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PartieClient.AcceuilController">
+   <right>
+      <AnchorPane fx:id="anchorpane" prefHeight="683.0" prefWidth="1170.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tablearticles" layoutX="62.0" layoutY="170.0" prefHeight="410.0" prefWidth="804.0" style="-fx-border-color: #ffff00;">
+              <columns>
+                <TableColumn fx:id="nom_article" minWidth="0.0" prefWidth="185.0" text="Nom article" />
+                  <TableColumn fx:id="categorie" minWidth="0.0" prefWidth="166.0" text="Categorie" />
+                  <TableColumn fx:id="sous_categorie" minWidth="0.0" prefWidth="217.0" text="Sous Catégorie" />
+                  <TableColumn fx:id="marque" minWidth="0.0" prefWidth="234.0" text="Marque" />
+              </columns>
+            </TableView>
+            <Button fx:id="offre" layoutX="938.0" layoutY="465.0" mnemonicParsing="false" onAction="#switchToAjouterOffre" prefHeight="41.0" prefWidth="134.0" style="-fx-background-color: black; -fx-border-color: yellow; -fx-border-width: 2px;" text="Offre" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="details" layoutX="937.0" layoutY="400.0" mnemonicParsing="false" onAction="#afficherDetails" prefHeight="41.0" prefWidth="135.0" style="-fx-background-color: black; -fx-border-color: yellow; -fx-border-width: 2px;" text="Details" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="review" layoutX="938.0" layoutY="524.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="136.0" style="-fx-background-color: black; -fx-border-color: yellow; -fx-border-width: 2px;" text="Review" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="ajouter_article" layoutX="396.0" layoutY="611.0" mnemonicParsing="false" onAction="#switchToAjouterArticle" prefHeight="41.0" prefWidth="155.0" style="-fx-background-color: black; -fx-border-color: yellow; -fx-border-width: 2px;" text="Ajouter Article" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fx:id="imagee" fitHeight="209.0" fitWidth="200.0" layoutX="906.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="952.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@327219549_494825626194570_4624249813250472593_n.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="retourner" layoutX="62.0" layoutY="31.0" mnemonicParsing="false" onAction="#retournerr" prefHeight="41.0" prefWidth="136.0" style="-fx-background-color: black; -fx-border-color: yellow; -fx-border-width: 2px;" text="Retourner" textFill="YELLOW">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

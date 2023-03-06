@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PartieClient.ClientPartieController">
+   <children>
+      <BorderPane layoutX="6.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="810.0" prefWidth="264.0" style="-fx-background-color: #010D79;" styleClass="right-bar" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="57.0" prefWidth="435.0" style="-fx-background-color: #F3F14F;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button layoutX="29.0" layoutY="266.0" mnemonicParsing="false" onAction="#articles" prefHeight="36.0" prefWidth="176.0" style="-fx-background-color: #000000;" text=" Articles" textFill="#f3f14f">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <Button layoutX="29.0" layoutY="335.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="177.0" style="-fx-background-color: #000000;" text="Shops" textFill="#f3f14f">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <Button layoutX="29.0" layoutY="405.0" mnemonicParsing="false" onAction="#participer" prefHeight="36.0" prefWidth="179.0" style="-fx-background-color: #000000;" text="participer jeux" textFill="#f3f14f">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <Button layoutX="22.0" layoutY="646.0" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="184.0" style="-fx-background-color: #000000;" text="Deconnexion" textFill="#f3f14f">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                        <ImageView fitHeight="139.0" fitWidth="184.0" layoutX="32.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@327219549_494825626194570_4624249813250472593_n.png" />
+                           </image></ImageView>
+                     </children></Pane>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <Pane prefHeight="65.0" prefWidth="393.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="username" layoutX="653.0" layoutY="2.0" prefHeight="62.0" prefWidth="211.0" textFill="#878787">
+                                 <font>
+                                    <Font name="Cambria" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children></Pane>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Pane prefHeight="84.0" prefWidth="96.0" HBox.hgrow="ALWAYS" />
+                        <Pane prefHeight="84.0" prefWidth="96.0">
+                           <children>
+                              <Button fx:id="modifiercompte" layoutX="-57.0" layoutY="-1.0" mnemonicParsing="false" onAction="#link10" prefHeight="31.0" prefWidth="145.0" style="-fx-background-color: #000000;" text="Modifier Compte" textFill="#f3f14f" />
+                              <Button fx:id="mesarticlesbtn" layoutX="-56.0" layoutY="38.0" mnemonicParsing="false" onAction="#mesarticles" prefHeight="31.0" prefWidth="145.0" style="-fx-background-color: #000000;" text="Mes articles" textFill="#f3f14f" />
+                              <Button layoutX="-55.0" layoutY="79.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="144.0" style="-fx-background-color: #000000;" text="Mes boutiques" textFill="#f3f14f" />
+                           </children></Pane>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
