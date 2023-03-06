@@ -185,6 +185,11 @@ public class MesArticlesController implements Initializable {
         alert.setContentText("Veuillez sélectionner un article à supprimer !");
         alert.showAndWait();
     } else {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText("Are you sure ?");
+        alert.setContentText("cet article sera supprimé!");
+        alert.showAndWait();
                 article selectedarticlee = tablearticlesParId.getSelectionModel().getSelectedItem();
         as.supprimerArticle(selectedarticlee);
         afficherArticlesParId();

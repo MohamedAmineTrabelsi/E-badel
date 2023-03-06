@@ -86,16 +86,16 @@ public class ListeOffresController implements Initializable {
       OffreServices os = new OffreServices();
 
       public void afficherOffres() throws IOException{
-/*
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MesArticles.fxml"));
        root = loader.load();
        MesArticlesController secondController = loader.getController();
        article ar = new article();
-         secondController.setData(ar);
+        ar= secondController.getSelectedArticle();
       int ida=  ar.getId_article();
-*/
+
     ObservableList<offre> tableoffre = FXCollections.observableArrayList();
-    tableoffre = os.afficherListeDesoffres(33);
+    tableoffre = os.afficherListeDesoffres(ida);
     titre_offre.setCellValueFactory(new PropertyValueFactory<>("titre")); 
     produit_propose.setCellValueFactory(new PropertyValueFactory<>("produit_propose")); 
     categorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
