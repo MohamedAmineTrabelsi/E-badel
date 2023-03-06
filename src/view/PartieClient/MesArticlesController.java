@@ -69,7 +69,7 @@ public class MesArticlesController implements Initializable {
     
     @FXML
     private TableView<article> tablearticlesParId;
-    private article selectedItem;
+    private article selectedItem =new article();
     
         Scene scene;
         Parent root;
@@ -188,7 +188,7 @@ public class MesArticlesController implements Initializable {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Confirmation");
         alert.setHeaderText("Are you sure ?");
-        alert.setContentText("cet article sera supprimé!");
+        alert.setContentText("cet article sera supprimé !");
         alert.showAndWait();
                 article selectedarticlee = tablearticlesParId.getSelectionModel().getSelectedItem();
         as.supprimerArticle(selectedarticlee);
@@ -217,7 +217,6 @@ public class MesArticlesController implements Initializable {
     private void consulterOffres(ActionEvent event) throws IOException {
         
          if(tablearticlesParId.getSelectionModel().getSelectedItem() !=null){
-               article selectedarticle=as.afficherArticleDetails(tablearticlesParId.getSelectionModel().getSelectedItem().getId_article());
          FXMLLoader loader = new FXMLLoader(getClass().getResource("ListeOffres.fxml"));
           root = loader.load();
          ListeOffresController secondController = loader.getController();

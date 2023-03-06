@@ -69,8 +69,9 @@ public class ListeOffresController implements Initializable {
     @FXML
     private Button refuser;
     
-      private article articlee;
-      private static user userr;
+      private article articlee = new article();
+      private static user userr = new user();
+    
       
       Scene scene;
         Parent root;
@@ -80,22 +81,35 @@ public class ListeOffresController implements Initializable {
     /**
      * Initializes the controller class.
      */
-   
+     @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+      setUser(userr);
+      setArticle(articlee);
+        try {
+            // System.out.println(userr.toString());
+            System.out.println(articlee.toString());
+            afficherOffres();
+        } catch (IOException ex) {
+            Logger.getLogger(ListeOffresController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+    } 
   
     
       OffreServices os = new OffreServices();
 
       public void afficherOffres() throws IOException{
-
+/*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MesArticles.fxml"));
        root = loader.load();
        MesArticlesController secondController = loader.getController();
        article ar = new article();
         ar= secondController.getSelectedArticle();
       int ida=  ar.getId_article();
-
+*/
     ObservableList<offre> tableoffre = FXCollections.observableArrayList();
-    tableoffre = os.afficherListeDesoffres(ida);
+    tableoffre = os.afficherListeDesoffres(articlee.getId_article());
     titre_offre.setCellValueFactory(new PropertyValueFactory<>("titre")); 
     produit_propose.setCellValueFactory(new PropertyValueFactory<>("produit_propose")); 
     categorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
@@ -161,20 +175,10 @@ public class ListeOffresController implements Initializable {
       @FXML
     private void accepter(ActionEvent event) {
     }
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-
-      setUser(userr);
-      setArticle(articlee);
-        try {
-            // System.out.println(userr.toString());
-            //System.out.println(articlee.toString());
-            afficherOffres();
-        } catch (IOException ex) {
-            Logger.getLogger(ListeOffresController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-     
-    } 
+    
+    
+    
+  
        public void setUser(user user) {
         this.userr = user;
     }
