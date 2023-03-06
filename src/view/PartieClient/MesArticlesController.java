@@ -65,6 +65,7 @@ public class MesArticlesController implements Initializable {
     private Button consuleroffre;
     
      private ModifierArticleController ModifierArticleController;
+     private ListeOffresController ListeOffresController;
     
     @FXML
     private TableView<article> tablearticlesParId;
