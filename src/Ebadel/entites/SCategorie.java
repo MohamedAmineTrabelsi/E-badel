@@ -51,5 +51,5 @@ public class SCategorie {
         return nom_s_c;
     }
     
-    
+    //klsmqjdu
 }

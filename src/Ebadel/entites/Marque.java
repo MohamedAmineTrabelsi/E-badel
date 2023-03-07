@@ -62,6 +62,4 @@ public class Marque {
     public String toString() {
         return nom_m ;
     }
-
-
 }
