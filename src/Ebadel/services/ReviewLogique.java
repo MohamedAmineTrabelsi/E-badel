@@ -78,12 +78,12 @@ public class ReviewLogique {
         
           myConn = myConnection.getInstance().getConnection();
         try {
-            String query = "INSERT INTO reviews (user_id, article_id, comment,rate) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO reviews ( article_name, comment,rate) VALUES ( ?, ?, ?)";
             PreparedStatement preparedStmt = myConn.prepareStatement(query);
-            preparedStmt.setInt(1, r.getUser_id());
-            preparedStmt.setInt(2, r.getArticle_id());
-            preparedStmt.setString(3, r.getComment());
-            preparedStmt.setDouble(4, r.getRate());
+          
+            preparedStmt.setString(1, r.getArticle_name());
+            preparedStmt.setString(2, r.getComment());
+            preparedStmt.setDouble(3, r.getRate());
             
            
            
@@ -93,31 +93,30 @@ public class ReviewLogique {
         }
     }
 
-  /*  public void modifierReview(int review_id, int user_id, int article_id, String comment, Rating starRating) {
+    public void modifierReview( String article_name, String comment, double rate) {
         try {
-            String query = "UPDATE reviews SET user_id = ?, article_id = ?, comment = ?, star_rating = ? WHERE id = ?";
+            String query = "UPDATE reviews SET  article_name = ?, comment = ?, rate = ? WHERE article_name = ?";
             PreparedStatement preparedStmt = myConn.prepareStatement(query);
-            preparedStmt.setInt(1, user_id);
-            preparedStmt.setInt(2, article_id);
-            preparedStmt.setString(3, comment);
-            preparedStmt.setInt(4, (int) starRating.getRating());
-            preparedStmt.setInt(5, review_id);
+            preparedStmt.setString(1, article_name);
+            preparedStmt.setString(2, comment);
+            preparedStmt.setDouble(3, rate);
+           
             preparedStmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Erreur lors de la modification de la review : " + e.getMessage());
         }
-    }*/
+    }
 
-  /*  public void supprimerReview(int review_id) {
+    public void supprimerReview(String article_name) {
         try {
-            String query = "DELETE FROM reviews WHERE id = ?";
+            String query = "DELETE FROM reviews WHERE article_name = ?";
             PreparedStatement preparedStmt = myConn.prepareStatement(query);
-            preparedStmt.setInt(1, review_id);
+            preparedStmt.setString(1, article_name);
             preparedStmt.execute();
         } catch (SQLException e) {
             System.err.println("Erreur lors de la suppression de la review : " + e.getMessage());
         }
-    }*/
+    }
 
     public ObservableList<Reviews> getAllReviews() {
             ObservableList<Reviews> reviewList = FXCollections.observableArrayList();
@@ -129,13 +128,13 @@ public class ReviewLogique {
 
             while (rs.next()) {
                 int id = rs.getInt("id");
-                int user_id = rs.getInt("user_id");
-                int article_id = rs.getInt("article_id");
+               
+                String article_name = rs.getString("article_name");
                 String comment = rs.getString("comment");
                 Double rate = rs.getDouble("rate");
                
 
-                Reviews review = new Reviews( user_id, article_id,comment,null,rate);
+                Reviews review = new Reviews( article_name,comment,null,rate);
                 reviewList.add(review);
             }
         } catch (SQLException e) {

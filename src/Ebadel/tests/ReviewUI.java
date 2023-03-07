@@ -40,7 +40,13 @@ public class ReviewUI extends Application {
     public void start(Stage stage) throws Exception {
         Parent root;
        // root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ebadel\\gui\\Review.fxml"));
-      root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ebadel\\gui\\Claim.fxml"));
+      //root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ebadel\\gui\\Claim.fxml"));
+       //root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ebadel\\gui\\AdminReclamation.fxml"));
+       // root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ebadel\\gui\\AddClaim.fxml"));
+        //  root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ebadel\\gui\\AddReview.fxml"));
+        // root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ebadel\\gui\\HomeReviews.fxml"));
+         root = FXMLLoader.load(getClass().getClassLoader().getResource("\\Ebadel\\gui\\navbar.fxml"));
+
         
         Scene scene = new Scene(root);
         

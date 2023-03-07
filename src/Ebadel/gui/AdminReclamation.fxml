@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="646.0" prefWidth="1066.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ebadel.gui.AdminReclamationController">
+    
+    
+    
+     <children>
+      <TableView fx:id="table_Claim" layoutX="78.0" layoutY="178.0" prefHeight="382.0" prefWidth="793.0">
+        <columns>
+          <TableColumn fx:id="contactID" prefWidth="75.0" text="Contact" />
+          <TableColumn fx:id="DestinatireID" prefWidth="136.0" text="Destinataire" />
+            <TableColumn fx:id="TypeID" prefWidth="114.0" text="Type" />
+            <TableColumn fx:id="StautID" prefWidth="134.0" text="Statut" />
+            <TableColumn fx:id="DescriptionID" prefWidth="173.0" text="Description" />
+            <TableColumn fx:id="DateID" prefWidth="184.0" text="Date" />
+        </columns>
+      </TableView>
+      <Button fx:id="sendMailButton" layoutX="917.0" layoutY="471.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: black;" text="sendMail" textFill="#f3f14f" />
+      <Button fx:id="btnDelete" layoutX="917.0" layoutY="520.0" mnemonicParsing="false" onAction="#DeleteRec" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: black;" text="Delete" textFill="#f3f14f" />
+      <ComboBox fx:id="btnfiltre" layoutX="78.0" layoutY="125.0" onAction="#FiltreRec" prefWidth="150.0" promptText="filtre" />
+      <Button layoutX="852.0" layoutY="72.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="150.0" style="-fx-background-color: black;" text="Retour" textFill="#f3f14f" />
+   </children>
+    
+    
+    
+    
+</AnchorPane>

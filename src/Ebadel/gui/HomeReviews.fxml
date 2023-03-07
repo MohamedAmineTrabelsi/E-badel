@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="641.0" prefWidth="1145.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ebadel.gui.HomeReviewsController">
+    
+    <children>
+      <TableView fx:id="table_review" layoutX="37.0" layoutY="178.0" prefHeight="420.0" prefWidth="757.0">
+        <columns>
+          <TableColumn fx:id="col_article" prefWidth="246.0" text="article" />
+            <TableColumn fx:id="col_rate" prefWidth="285.0" text="rating" />
+            <TableColumn fx:id="col_comment" prefWidth="225.0" text="comment" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnDelete" layoutX="862.0" layoutY="534.0" mnemonicParsing="false" onAction="#supprimerReview" prefHeight="50.0" prefWidth="185.0" text="supprimer votre avis" />
+      <Button fx:id="btnUpdate" layoutX="862.0" layoutY="469.0" mnemonicParsing="false" onAction="#modifierReview" prefHeight="50.0" prefWidth="185.0" text="modifier votre avis" />
+      
+   </children>
+    
+    
+</AnchorPane>
