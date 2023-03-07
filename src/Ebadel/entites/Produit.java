@@ -114,5 +114,5 @@ public class Produit {
     public String toString() {
         return "Produit{" + "id_p=" + id_p + ", titre=" + titre + ", image=" + image + ", date=" + date + ", prix=" + prix + ", description=" + description + ", nom_c=" + nom_c + ", nom_s_c=" + nom_s_c + ", nom_m=" + nom_m + '}';
     } 
-    //hahahah
+    
 }
