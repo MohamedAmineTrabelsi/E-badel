@@ -69,7 +69,7 @@ public class MesArticlesController implements Initializable {
      private ListeOffresController ListeOffresController;
     
     
-    private article articlee =new article();
+    private static article articlee =new article();
     
         Scene scene;
         Parent root;
