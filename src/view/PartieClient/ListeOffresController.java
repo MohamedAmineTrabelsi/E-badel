@@ -92,26 +92,7 @@ public class ListeOffresController implements Initializable {
     
       OffreServices os = new OffreServices();
 
-      public void afficherOffres(){
-/*
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MesArticles.fxml"));
-       root = loader.load();
-       MesArticlesController secondController = loader.getController();
-       article ar = new article();
-        ar= secondController.getSelectedArticle();
-      int ida=  ar.getId_article();
-*/
-    int ida=articlee.getId_article();
-    ObservableList<offre> tableoffre = FXCollections.observableArrayList();
-    tableoffre = os.afficherListeDesoffres(ida);
-    titre_offre.setCellValueFactory(new PropertyValueFactory<>("titre")); 
-    produit_propose.setCellValueFactory(new PropertyValueFactory<>("produit_propose")); 
-    categorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
-    sous_categorie.setCellValueFactory(new PropertyValueFactory<>("sous_categorie"));
-    marque.setCellValueFactory(new PropertyValueFactory<>("marque"));
-    tableoffres.setItems(tableoffre);
 
-    }
     
     
     @FXML
@@ -179,7 +160,26 @@ public class ListeOffresController implements Initializable {
     public void setArticle(article article) {
         this.articlee = article;
     }
+      public void afficherOffres(){
+/*
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MesArticles.fxml"));
+       root = loader.load();
+       MesArticlesController secondController = loader.getController();
+       article ar = new article();
+        ar= secondController.getSelectedArticle();
+      int ida=  ar.getId_article();
+*/
+    int ida=articlee.getId_article();
+    ObservableList<offre> tableoffre = FXCollections.observableArrayList();
+    tableoffre = os.afficherListeDesoffres(ida);
+    titre_offre.setCellValueFactory(new PropertyValueFactory<>("titre")); 
+    produit_propose.setCellValueFactory(new PropertyValueFactory<>("produit_propose")); 
+    categorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
+    sous_categorie.setCellValueFactory(new PropertyValueFactory<>("sous_categorie"));
+    marque.setCellValueFactory(new PropertyValueFactory<>("marque"));
+    tableoffres.setItems(tableoffre);
 
+    }
   
     
 }
