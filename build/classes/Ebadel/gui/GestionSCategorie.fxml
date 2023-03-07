@@ -12,49 +12,75 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="819.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ebadel.gui.GestionSCategorieController">
+<AnchorPane id="AnchorPane" prefHeight="884.0" prefWidth="1301.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ebadel.gui.GestionSCategorieController">
    <children>
-      <Button fx:id="btnAjout" layoutX="22.0" layoutY="648.0" mnemonicParsing="false" onAction="#ajoutersouscategorie" style="-fx-background-color: #d6da67;" text="ajouter">
+      <Button fx:id="btnAjout" layoutX="22.0" layoutY="780.0" mnemonicParsing="false" onAction="#ajoutersouscategorie" prefHeight="65.0" prefWidth="117.0" style="-fx-background-color: black;" text="ajouter" textFill="#d6da67">
          <font>
-            <Font size="30.0" />
+            <Font name="Agency FB" size="32.0" />
          </font></Button>
-      <Label layoutX="265.0" layoutY="43.0" text="Gestion  des sous catégories" textFill="#d6da67">
+      <Label layoutX="293.0" layoutY="46.0" text="Gestion  des sous catégories" textFill="#d6da67">
          <font>
             <Font name="Arial Black" size="45.0" />
          </font>
       </Label>
-      <Pane layoutX="22.0" layoutY="168.0" prefHeight="460.0" prefWidth="507.0" style="-fx-background-color: #d6da67;">
+      <Pane layoutX="22.0" layoutY="193.0" prefHeight="570.0" prefWidth="573.0" style="-fx-background-color: #d6da67;">
          <children>
-            <ComboBox fx:id="LCategorie" layoutX="254.0" layoutY="37.0" prefHeight="31.0" prefWidth="227.0" promptText="Liste des catégories" />
-            <Label layoutX="53.0" layoutY="228.0" text="Nom de sous categorie">
+            <ComboBox fx:id="LCategorie" layoutX="254.0" layoutY="77.0" prefHeight="31.0" prefWidth="288.0" promptText="Liste des catégories" />
+            <Label layoutX="44.0" layoutY="299.0" text="Nom de sous categorie :" textOverrun="CLIP">
                <font>
-                  <Font name="Arial Unicode MS" size="18.0" />
+                  <Font name="Arial Bold" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtSC" layoutX="254.0" layoutY="225.0" prefHeight="31.0" prefWidth="227.0" />
+            <TextField fx:id="txtSC" layoutX="260.0" layoutY="293.0" prefHeight="33.0" prefWidth="288.0" promptText="Insérez le nom de la sous-catégorie" style="-fx-background-color: white; -fx-border-color: yellow; -fx-border-width: 0px 0px 3px 0px;" />
          </children>
       </Pane>
-      <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="22.0" layoutY="20.0">
+      <ImageView fitHeight="143.0" fitWidth="240.0" layoutX="22.0" layoutY="20.0">
          <image>
             <Image url="@../327219549_494825626194570_4624249813250472593_n.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnmodif" layoutX="177.0" layoutY="648.0" mnemonicParsing="false" onAction="#modifiersouscategorie" style="-fx-background-color: #d6da67;" text="Modifier">
+      <Button fx:id="btnmodif" layoutX="207.0" layoutY="780.0" mnemonicParsing="false" onAction="#modifiersouscategorie" prefHeight="65.0" prefWidth="133.0" style="-fx-background-color: black;" text="Modifier" textFill="#d6da67">
          <font>
-            <Font size="30.0" />
+            <Font name="Agency FB" size="34.0" />
          </font>
       </Button>
-      <Button fx:id="btnsupprime" layoutX="353.0" layoutY="648.0" mnemonicParsing="false" onAction="#supprimersouscategorie" style="-fx-background-color: #d6da67;" text="Supprimer">
+      <Button fx:id="btnsupprime" layoutX="386.0" layoutY="780.0" mnemonicParsing="false" onAction="#supprimersouscategorie" prefHeight="65.0" prefWidth="152.0" style="-fx-background-color: black;" text="Supprimer" textFill="#d6da67">
          <font>
-            <Font size="30.0" />
+            <Font name="Agency FB" size="32.0" />
          </font>
       </Button>
-      <TableView fx:id="table_s" layoutX="638.0" layoutY="168.0" prefHeight="460.0" prefWidth="525.0">
+      <TableView fx:id="table_s" layoutX="661.0" layoutY="193.0" prefHeight="570.0" prefWidth="573.0">
         <columns>
-          <TableColumn fx:id="id_s_c" prefWidth="134.0" text="ID sous-catégorie" />
-          <TableColumn fx:id="nom_c" prefWidth="182.0" text="Nom catégorie" />
-            <TableColumn fx:id="nom_s_c" prefWidth="208.0" text="Nom sous-catégorie" />
+          <TableColumn fx:id="nom_c" prefWidth="240.0" text="Nom catégorie" />
+            <TableColumn fx:id="nom_s_c" prefWidth="332.0" text="Nom sous-catégorie" />
         </columns>
       </TableView>
+      <Button fx:id="btnNavM" layoutX="1064.0" layoutY="80.0" mnemonicParsing="false" onAction="#naviguervers_marque" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: black;" text="Gestion des marques" textFill="#d6da67">
+         <font>
+            <Font name="Arial Black" size="13.0" />
+         </font></Button>
+      <Button fx:id="btnNavC" layoutX="1064.0" layoutY="43.0" mnemonicParsing="false" onAction="#naviguervers_categorie" prefHeight="31.0" prefWidth="170.0" style="-fx-background-color: black;" text="Gestion des catégories" textFill="#d6da67">
+         <font>
+            <Font name="Arial Black" size="12.0" />
+         </font></Button>
+      <Button fx:id="stat1" layoutX="1016.0" layoutY="781.0" mnemonicParsing="false" onAction="#afficherStatistiqueS" prefHeight="65.0" prefWidth="162.0" style="-fx-background-color: black;" text="Statistique" textFill="#d6da67">
+         <font>
+            <Font name="Agency FB" size="32.0" />
+         </font></Button>
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="1240.0" layoutY="80.0">
+         <image>
+            <Image url="@../Fleche-droite-vert-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="37.0" layoutX="1020.0" layoutY="43.0">
+         <image>
+            <Image url="@../Fleche-gauche-rouge-icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="62.0" layoutX="1178.0" layoutY="780.0">
+         <image>
+            <Image url="@../stat.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

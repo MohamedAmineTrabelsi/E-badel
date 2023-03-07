@@ -104,7 +104,7 @@ public class ProduitCRUD implements IProduit {
                 p.setNom_s_c(result.getString("nom_s_c"));
                 p.setNom_m(result.getString("nom_m"));
                 mesProduit.add(p);
-                System.out.println(p);
+                //System.out.println(p);
             }
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -224,8 +224,39 @@ public class ProduitCRUD implements IProduit {
             ResultSet result = statement.executeQuery(requet);
             result.next();
             nb = result.getDouble("COUNT(*)");
-                            System.out.println(nb);
-//hh
+            System.out.println(nb);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+        return nb;
+    }
+
+    public double getnbProdParSCateg(String nomSCateg) {
+        double nb = 0.0;
+        String requet = "SELECT count(*) FROM `produit` where nom_s_c='" + nomSCateg + "';";
+        try {
+            Statement statement = cnx.getCnx().createStatement();
+            ResultSet result = statement.executeQuery(requet);
+            result.next();
+            nb = result.getDouble("COUNT(*)");
+            System.out.println(nb);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+
+        }
+        return nb;
+    }
+
+    public double getnbProdParMarque(String nomMarq) {
+        double nb = 0.0;
+        String requet = "SELECT count(*) FROM `produit` where nom_m='" + nomMarq + "';";
+        try {
+            Statement statement = cnx.getCnx().createStatement();
+            ResultSet result = statement.executeQuery(requet);
+            result.next();
+            nb = result.getDouble("COUNT(*)");
+            System.out.println(nb);
         } catch (SQLException ex) {
             System.out.println(ex);
 

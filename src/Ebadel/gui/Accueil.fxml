@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="866.0" prefWidth="1191.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ebadel.gui.AccueilController">
@@ -10,9 +12,22 @@
       <ComboBox fx:id="LCategorie" layoutX="251.0" layoutY="180.0" prefHeight="31.0" prefWidth="185.0" promptText="Liste des catégories" />
       <ComboBox fx:id="LSCategorie" layoutX="445.0" layoutY="180.0" prefHeight="31.0" prefWidth="226.0" promptText="Liste des sous-catégories" />
       <ComboBox fx:id="LMarque" layoutX="679.0" layoutY="180.0" prefHeight="31.0" prefWidth="193.0" promptText="Liste des marques" />
-      <TextField fx:id="txtprod" layoutX="343.0" layoutY="91.0" prefHeight="31.0" prefWidth="388.0" promptText="Recherche de produits" />
-      <Button fx:id="btnaller" layoutX="737.0" layoutY="91.0" mnemonicParsing="false" onAction="#chercherProduitParNom" text="Aller" />
+      <TextField fx:id="txtprod" layoutX="392.0" layoutY="60.0" prefHeight="67.0" prefWidth="426.0" promptText="Recherche de produits" />
       <Button fx:id="btnchercher" layoutX="879.0" layoutY="180.0" mnemonicParsing="false" onAction="#chercherproduit" text="je cherche" />
-      <Button fx:id="stat" layoutX="251.0" layoutY="349.0" mnemonicParsing="false" onAction="#afficherStatistique" text="statistique" />
+      <ImageView fx:id="btnchercherN" fitHeight="67.0" fitWidth="68.0" layoutX="818.0" layoutY="60.0" onMouseClicked="#chercherProduitParNom" onMouseEntered="#mouseEcherhcer" onMouseExited="#mouseEXchercher">
+         <image>
+            <Image url="@../chercher.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnactualiser" fitHeight="31.0" fitWidth="34.0" layoutX="979.0" layoutY="180.0" onMouseClicked="#ResetFilter" onMouseEntered="#MouseEntered" onMouseExited="#MouseExited">
+         <image>
+            <Image url="@../actualiser.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="logo" fitHeight="244.0" fitWidth="250.0" onMouseClicked="#publiciter" onMouseEntered="#mouseEntred" onMouseExited="#mouseExited">
+         <image>
+            <Image url="@../327219549_494825626194570_4624249813250472593_n.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

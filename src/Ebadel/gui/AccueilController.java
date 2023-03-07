@@ -12,29 +12,30 @@ import Ebadel.services.CategorieCRUD;
 import Ebadel.services.MarqueCRUD;
 import Ebadel.services.ProduitCRUD;
 import Ebadel.services.SCategorieCRUD;
-import java.awt.Color;
-import java.awt.Font;
+//import java.io.File;
+import java.io.IOException;
 import java.net.URL;
-import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+//import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+
+import javafx.scene.input.MouseEvent;
+//import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.fx.ChartViewer;
-import org.jfree.chart.labels.PieSectionLabelGenerator;
-import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
-import org.jfree.chart.plot.PiePlot;
-import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.data.general.PieDataset;
+//import javax.print.attribute.standard.Media;
 
 /**
  * FXML Controller class
@@ -50,8 +51,6 @@ public class AccueilController implements Initializable {
     @FXML
     private ComboBox<Marque> LMarque;
     @FXML
-    private Button btnaller;
-    @FXML
     private Button btnchercher;
 
     ObservableList<SCategorie> mesSCategorie = FXCollections.observableArrayList();
@@ -64,9 +63,13 @@ public class AccueilController implements Initializable {
     MarqueCRUD mm = new MarqueCRUD();
     ProduitCRUD p = new ProduitCRUD();
     @FXML
-    private Button stat;
-    @FXML
     private TextField txtprod;
+    @FXML
+    private ImageView btnchercherN;
+    @FXML
+    private ImageView btnactualiser;
+    @FXML
+    private ImageView logo;
 
     /**
      * Initializes the controller class.
@@ -76,11 +79,27 @@ public class AccueilController implements Initializable {
         initCategListe();
         LCategorie.valueProperty().addListener((obs, oldVal, newVal) -> {
             // Handle value change here
-            initSCategListe(newVal.toString());
+            if (newVal != null) {
+                initSCategListe(newVal.toString());
+            }
         });
         LSCategorie.valueProperty().addListener((obs, oldVal, newValS) -> {
             // Handle value change here
-            initMarqueListe(newValS.toString());
+            if (newValS != null) {
+                initMarqueListe(newValS.toString());
+            }
+        });
+        // Ajouter un écouteur pour la touche Entrée sur le TextField txtprod
+        txtprod.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                chercherProduitParNom(null);
+            }
+        });
+        btnchercherN.setOnMouseClicked(e -> {
+            chercherProduitParNom(null);
+        });
+        btnactualiser.setOnMouseClicked(e -> {
+            ResetFilter(null);
         });
     }
 
@@ -126,51 +145,82 @@ public class AccueilController implements Initializable {
 
     }
 
-    @FXML
-    private void afficherStatistique(ActionEvent event) {
-        PieDataset dataset = createDataset();
-        JFreeChart chart = createChart(dataset);
-        ChartViewer viewer = new ChartViewer(chart);
-        Scene scene = new Scene(viewer);
-        Stage primaryStage = new Stage();
-        primaryStage.setWidth(600);
-        primaryStage.setHeight(400);
-        primaryStage.setTitle("Statistique Categorie");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
+
 
     @FXML
-    private void chercherProduitParNom(ActionEvent event) {
+    private void chercherProduitParNom(MouseEvent event) {
+        // Vérifier si le champ de texte n'est pas vide
+        if (txtprod.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText("Impossible de rechercher le produit");
+            alert.setContentText("Le nom du produit est obligatoire !");
+            alert.showAndWait();
+        }
         p.getProduitParTitre(txtprod.getText());
     }
 
-      
-    private PieDataset createDataset() {
-        DefaultPieDataset dataset = new DefaultPieDataset();
-        for (Categorie categorie : cc.afficherCategorie()) {
-        dataset.setValue(categorie.getNom_c(), p.getnbProdParCateg(categorie.getNom_c()));
+    @FXML
+    private void publiciter(MouseEvent event) {
+        try {
+            // Charger la nouvelle scène FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Musique.fxml"));
+            Parent root = loader.load();
 
+            // Créer une nouvelle fenêtre
+            Stage newStage = new Stage();
+            newStage.setTitle("Publiciter");
+            newStage.setScene(new Scene(root));
+
+            // Afficher la nouvelle fenêtre
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return dataset;
     }
 
-    private static JFreeChart createChart(PieDataset dataset) {
-        JFreeChart chart = ChartFactory.createPieChart(
-                "", dataset, false, true, false);
-        chart.setBackgroundPaint(Color.LIGHT_GRAY);
-        PiePlot plot = (PiePlot) chart.getPlot();
-        plot.setOutlineVisible(false);
-               plot.setSectionPaint("Informatiques", Color.BLUE);
-      /*  plot.setSectionPaint("Voiture", Color.BLUE);
-        plot.setSectionPaint("Immobilier", Color.GREEN);
-        plot.setSectionPaint("Logiaze", Color.YELLOW);
-        plot.setSectionPaint("Esqqs", Color.CYAN);*/
-        plot.setLabelFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
-        // Custom labels https://stackoverflow.com/a/17507061/230513
-        PieSectionLabelGenerator gen = new StandardPieSectionLabelGenerator(
-                "{0}: {2}", new DecimalFormat("0"), new DecimalFormat("0.0%"));
-        plot.setLabelGenerator(gen);
-        return chart;
+    private final double SCALE_DELTA = 1.2;
+
+    @FXML
+    private void MouseExited(MouseEvent event) {
+        btnactualiser.setScaleX(1.0);
+        btnactualiser.setScaleY(1.0);
+    }
+
+    @FXML
+    private void MouseEntered(MouseEvent event) {
+        btnactualiser.setScaleX(SCALE_DELTA);
+        btnactualiser.setScaleY(SCALE_DELTA);
+    }
+
+    @FXML
+    private void mouseExited(MouseEvent event) {
+        logo.setScaleX(1.0);
+        logo.setScaleY(1.0);
+    }
+
+    @FXML
+    private void mouseEntred(MouseEvent event) {
+        logo.setScaleX(SCALE_DELTA);
+        logo.setScaleY(SCALE_DELTA);
+    }
+
+    @FXML
+    private void mouseEXchercher(MouseEvent event) {
+        btnchercherN.setScaleX(1.0);
+        btnchercherN.setScaleY(1.0);
+    }
+
+    @FXML
+    private void mouseEcherhcer(MouseEvent event) {
+        btnchercherN.setScaleX(SCALE_DELTA);
+        btnchercherN.setScaleY(SCALE_DELTA);
+    }
+
+    @FXML
+    private void ResetFilter(MouseEvent event) {
+        LCategorie.setValue(null);
+        LSCategorie.setValue(null);
+        LMarque.setValue(null);
     }
 }

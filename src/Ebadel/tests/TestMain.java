@@ -32,10 +32,10 @@ public class TestMain {
      //pservice.supprimerCategorie(p1);
      // pservice.modifierCategorie(p1,"chossure");
      // pservice.afficherCategorie();
-     /* SCategorieCRUD a=new SCategorieCRUD();
+      /*SCategorieCRUD a=new SCategorieCRUD();
       a.afficherSCategorieParCategorie("ww");*/
-      MarqueCRUD a=new MarqueCRUD();
-      a.afficherMarqueParSCategorie("Ordinateurs");
+     /* MarqueCRUD a=new MarqueCRUD();
+      a.supprimerMarque("");*/
       
       ProduitCRUD p =new ProduitCRUD();
       p.getnbProdParCateg("informatiques");

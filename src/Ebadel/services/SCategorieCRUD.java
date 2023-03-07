@@ -46,13 +46,13 @@ public class SCategorieCRUD implements ISCategorie{
 
     @Override
     public boolean modifierSCategorie(SCategorie s, String nom_s_c, String nom_c) {
-                String sql="UPDATE souscategorie SET nom_s_c=?,nom_c=? WHERE nom_s_c=?";
+                String sql="UPDATE souscategorie SET nom_s_c=? WHERE nom_s_c=? AND nom_c=?";
           boolean resultat = false;
           try {
         PreparedStatement ste= cnx.getCnx().prepareStatement(sql);
-            ste.setString(1,nom_s_c);
-            ste.setString(2,nom_c);
-            ste.setString(3,s.getNom_s_c());
+            ste.setString(1,nom_s_c);           
+            ste.setString(2,s.getNom_s_c());
+            ste.setString(3,nom_c);
             int rowsUpdated = ste.executeUpdate();
          if (rowsUpdated > 0) {
              System.out.println("Une sous-catégorie existante a été mise à jour avec succès !");
