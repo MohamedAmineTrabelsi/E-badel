@@ -111,7 +111,6 @@ public class MesArticlesController implements Initializable {
 
     @FXML
     private void modifArticle(ActionEvent event) throws IOException {
-        
         if(tablearticlesParId.getSelectionModel().getSelectedItem() !=null){
             article selectedarticle=as.afficherArticleDetails(tablearticlesParId.getSelectionModel().getSelectedItem().getId_article());
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ModifierArticle.fxml"));
@@ -125,7 +124,6 @@ public class MesArticlesController implements Initializable {
    ((Node) event.getSource()).getScene().setRoot(root);
      System.out.println(userr.getIdu());
      System.out.println(selectedarticle.getNom_article());
-
 }
        else
          {
