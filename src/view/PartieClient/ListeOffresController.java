@@ -73,7 +73,7 @@ public class ListeOffresController implements Initializable {
       private static user userr = new user();
     
       
-      Scene scene;
+        Scene scene;
         Parent root;
         Stage stage;
    
@@ -87,8 +87,7 @@ public class ListeOffresController implements Initializable {
       setUser(userr);
       setArticle(articlee);
         try {
-            // System.out.println(userr.toString());
-            System.out.println(articlee.toString());
+            System.out.println(userr.toString());
             afficherOffres();
         } catch (IOException ex) {
             Logger.getLogger(ListeOffresController.class.getName()).log(Level.SEVERE, null, ex);
