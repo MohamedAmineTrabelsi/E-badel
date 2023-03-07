@@ -40,7 +40,8 @@ import services.user.ArticleServices;
  */
 public class MesArticlesController implements Initializable {
 
-
+    @FXML
+    private TableView<article> tablearticlesParId;
     @FXML
     private TableColumn<String, article> nom_article;
     @FXML
@@ -67,8 +68,7 @@ public class MesArticlesController implements Initializable {
      private ModifierArticleController ModifierArticleController;
      private ListeOffresController ListeOffresController;
     
-    @FXML
-    private TableView<article> tablearticlesParId;
+    
     private article articlee =new article();
     
         Scene scene;
@@ -217,7 +217,8 @@ public class MesArticlesController implements Initializable {
              article ar=as.afficherArticleDetails(tablearticlesParId.getSelectionModel().getSelectedItem().getId_article());
          FXMLLoader loader = new FXMLLoader(getClass().getResource("ListeOffres.fxml"));
           root = loader.load();
-         ListeOffresController secondController = loader.getController();
+   
+          ListeOffresController secondController = loader.getController();
         secondController.setArticle(ar);
         
         ListeOffresController secondController2 = loader.getController();

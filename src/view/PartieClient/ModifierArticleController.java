@@ -10,7 +10,9 @@ import entities.Marque;
 import entities.SCategorie;
 import entities.article;
 import entities.user;
+import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -21,10 +23,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import services.user.CategorieCRUD;
 import services.user.MarqueCRUD;
 import services.user.SCategorieCRUD;
@@ -65,6 +71,11 @@ public class ModifierArticleController implements Initializable {
      private article articlee;
     @FXML
     private Button cancel;
+    
+    
+     private Scene scene;
+ private Parent root; 
+ private Stage stage;
     
        ObservableList<SCategorie> mesSCategorie = FXCollections.observableArrayList();
     SCategorieCRUD ss = new SCategorieCRUD();
@@ -114,6 +125,22 @@ public class ModifierArticleController implements Initializable {
 
     @FXML
     private void insertImage(ActionEvent event) {
+           FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Sélectionnez un fichier PNG");
+    fileChooser.getExtensionFilters().addAll(
+            new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg", "*.gif", "*.bmp", "*.ico","*.jfif"));
+    File fichierSelectionne = fileChooser.showOpenDialog(stage);
+
+    if (fichierSelectionne != null) {
+        try {
+            String imagePath = fichierSelectionne.toURI().toURL().toString();
+            Image image = new Image(imagePath);
+            image_view.setImage(image);
+            file_path.setText(fichierSelectionne.getName());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
     }
 
     
