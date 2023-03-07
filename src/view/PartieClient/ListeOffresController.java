@@ -86,19 +86,13 @@ public class ListeOffresController implements Initializable {
 
       setUser(userr);
       setArticle(articlee);
-        try {
-            System.out.println(userr.toString());
             afficherOffres();
-        } catch (IOException ex) {
-            Logger.getLogger(ListeOffresController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-     
     } 
   
     
       OffreServices os = new OffreServices();
 
-      public void afficherOffres() throws IOException{
+      public void afficherOffres(){
 /*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MesArticles.fxml"));
        root = loader.load();
@@ -107,8 +101,9 @@ public class ListeOffresController implements Initializable {
         ar= secondController.getSelectedArticle();
       int ida=  ar.getId_article();
 */
+    int ida=articlee.getId_article();
     ObservableList<offre> tableoffre = FXCollections.observableArrayList();
-    tableoffre = os.afficherListeDesoffres(articlee.getId_article());
+    tableoffre = os.afficherListeDesoffres(ida);
     titre_offre.setCellValueFactory(new PropertyValueFactory<>("titre")); 
     produit_propose.setCellValueFactory(new PropertyValueFactory<>("produit_propose")); 
     categorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
