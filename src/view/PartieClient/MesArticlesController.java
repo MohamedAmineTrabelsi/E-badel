@@ -218,6 +218,7 @@ public class MesArticlesController implements Initializable {
    
           ListeOffresController secondController = loader.getController();
         secondController.setArticle(ar);
+        secondController.setArticleId(ar.getId_article());
         
         ListeOffresController secondController2 = loader.getController();
         secondController2.setUser(userr);

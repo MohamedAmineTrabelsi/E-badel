@@ -175,6 +175,7 @@ public class ListeOffresController implements Initializable {
     int ida=articlee.getId_article();
 */
     ObservableList<offre> tableoffre = FXCollections.observableArrayList();
+    System.out.println("ddddd"+this.id_article);
     tableoffre = os.afficherListeDesoffres(this.id_article);
     titre_offre.setCellValueFactory(new PropertyValueFactory<>("titre")); 
     produit_propose.setCellValueFactory(new PropertyValueFactory<>("produit_propose")); 
