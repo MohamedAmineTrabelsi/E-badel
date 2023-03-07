@@ -71,7 +71,7 @@ public class ListeOffresController implements Initializable {
     
       private article articlee = new article();
       private static user userr = new user();
-    
+    private int id_article;
       
         Scene scene;
         Parent root;
@@ -86,6 +86,7 @@ public class ListeOffresController implements Initializable {
 
       setUser(userr);
       setArticle(articlee);
+      setArticleId(id_article);
             afficherOffres();
     } 
   
@@ -160,6 +161,9 @@ public class ListeOffresController implements Initializable {
     public void setArticle(article article) {
         this.articlee = article;
     }
+    public void setArticleId(int idarticle) {
+        this.id_article = idarticle;
+    }
       public void afficherOffres(){
 /*
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MesArticles.fxml"));
@@ -168,10 +172,10 @@ public class ListeOffresController implements Initializable {
        article ar = new article();
         ar= secondController.getSelectedArticle();
       int ida=  ar.getId_article();
-*/
     int ida=articlee.getId_article();
+*/
     ObservableList<offre> tableoffre = FXCollections.observableArrayList();
-    tableoffre = os.afficherListeDesoffres(ida);
+    tableoffre = os.afficherListeDesoffres(this.id_article);
     titre_offre.setCellValueFactory(new PropertyValueFactory<>("titre")); 
     produit_propose.setCellValueFactory(new PropertyValueFactory<>("produit_propose")); 
     categorie.setCellValueFactory(new PropertyValueFactory<>("categorie"));
