@@ -69,7 +69,7 @@ public class MesArticlesController implements Initializable {
     
     @FXML
     private TableView<article> tablearticlesParId;
-    private article selectedItem =new article();
+    private article articlee =new article();
     
         Scene scene;
         Parent root;
@@ -84,9 +84,6 @@ public class MesArticlesController implements Initializable {
             Logger.getLogger(MesArticlesController.class.getName()).log(Level.SEVERE, null, ex);
         }
        setUser(userr);
-       tablearticlesParId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-    selectedItem = newValue;});
- 
     }   
     
     ArticleServices as = new ArticleServices();
@@ -217,18 +214,17 @@ public class MesArticlesController implements Initializable {
     private void consulterOffres(ActionEvent event) throws IOException {
         
          if(tablearticlesParId.getSelectionModel().getSelectedItem() !=null){
+             article ar=as.afficherArticleDetails(tablearticlesParId.getSelectionModel().getSelectedItem().getId_article());
          FXMLLoader loader = new FXMLLoader(getClass().getResource("ListeOffres.fxml"));
           root = loader.load();
          ListeOffresController secondController = loader.getController();
-        secondController.setArticle(selectedItem);
+        secondController.setArticle(ar);
         
         ListeOffresController secondController2 = loader.getController();
         secondController2.setUser(userr);
         
    ((Node) event.getSource()).getScene().setRoot(root);
-     System.out.println(userr.getIdu());
-     System.out.println("uuuuuuuuuuu"+selectedItem.getNom_article());
-  
+   System.out.println("uuuuuuuuuuuuuuuuuuu"+ar.getId_article());
     }
           else
          {
@@ -244,6 +240,10 @@ public class MesArticlesController implements Initializable {
 }
       public article getSelectedArticle() {
         return tablearticlesParId.getSelectionModel().getSelectedItem();
+    }
+
+    private void SetArticle(article article) {
+        this.articlee=article;
     }
          
     }
